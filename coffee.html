@@ -54,33 +54,44 @@
     myImage.setAttribute('src', 'static/coffee_beans.jpg');
 
 
-    function makeCoffee(evt) {
-        myImage.setAttribute('src', 'static/coffee_machine.jpg');
-
-        setTimeout(function() {
-            myImage.setAttribute('src', 'static/coffee_mug.jpg');
-        }, 1500);
-
-        setTimeout(function() {
-            myImage.setAttribute('src', 'static/coffee_beans.jpg');
-        }, 4000);
-        // console.dir(evt);
+    function makeCoffee() {
+        myImage.setAttribute('src', 'static/coffee_mug.jpg');
+        setTimeout(backToBeans, 2500);
     }
 
-    myImage.addEventListener('click', makeCoffee);
-    // function brewingCoffee() {
-    //     myImage.setAttribute('src', 'static/coffee_machine.jpg')
-    //     setTimeout(makeCoffee, 1500);
-    // }
+    function brewingCoffee() {
+        myImage.setAttribute('src', 'static/coffee_machine.jpg')
+        setTimeout(makeCoffee, 1500);
+    }
 
-    // function backToBeans() {
-    //     myImage.setAttribute('src', 'static/coffee_beans.jpg');
-    // }
-
-
+    function backToBeans() {
+        myImage.setAttribute('src', 'static/coffee_beans.jpg');
+    }
 
     // setTimeout(brewingCoffee, 1500)
-    
+    myImage.addEventListener('click', brewingCoffee);
+
+    // WITH ANONYMOUS FUNCTION
+    //     var myImage = document.getElementById('coffee-image');
+    // var myRevenueMessage = document.getElementById('revenue');
+
+    // myImage.setAttribute('src', 'static/coffee_beans.jpg');
+
+
+    // function makeCoffee(evt) {
+    //     myImage.setAttribute('src', 'static/coffee_machine.jpg');
+
+    //     setTimeout(function() {
+    //         myImage.setAttribute('src', 'static/coffee_mug.jpg');
+    //     }, 1500);
+
+    //     setTimeout(function() {
+    //         myImage.setAttribute('src', 'static/coffee_beans.jpg');
+    //     }, 4000);
+    //     // console.dir(evt);
+    // }
+
+    // myImage.addEventListener('click', makeCoffee);
 
     
 
